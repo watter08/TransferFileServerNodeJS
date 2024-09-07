@@ -21,6 +21,12 @@ const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
+////////////////////////////////////
+// Routes
+///////////////////////////////////
+import userRoutes from './routes/userRoutes';
+app.use(userRoutes);
+
 
 /////////////////////////////////////
 // Middleware
