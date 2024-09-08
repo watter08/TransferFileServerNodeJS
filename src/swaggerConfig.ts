@@ -13,7 +13,7 @@ const swaggerOptions = {
         },
       ],
     },
-    apis: ['./src/presentation/controllers/*.ts'],
+    apis: ['./src/presentation/routes/*.ts'],
   };
   
   export default swaggerOptions;
