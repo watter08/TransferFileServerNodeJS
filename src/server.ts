@@ -24,7 +24,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 ////////////////////////////////////
 // Routes
 ///////////////////////////////////
-import userRoutes from './routes/userRoutes';
+import userRoutes from './presentation/controllers/userRoutes';
 app.use(userRoutes);
 
 
