@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerOptions from './swaggerConfig';
-import multer from 'multer';
 
 dotenv.config();
 
@@ -24,6 +23,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 ////////////////////////////////////
 // Routes
 ///////////////////////////////////
+
 import userRoutes from './presentation/controllers/userRoutes';
 app.use(userRoutes);
 
