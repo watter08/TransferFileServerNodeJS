@@ -1,4 +1,4 @@
-export interface StoredDocument {
+export interface IStoredDocument {
     clientId: string;
     fileName: string;
     dropboxPath: string; 

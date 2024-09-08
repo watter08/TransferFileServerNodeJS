@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { StoredDocument } from '../../domain/interfaces/storedDocument';
+import { IStoredDocument } from '../../domain/interfaces/iStoredDocument';
 
 export class LocalFileStore {
   private filePath: string;
@@ -12,12 +12,12 @@ export class LocalFileStore {
     }
   }
 
-  getDocuments(): StoredDocument[] {
+  getDocuments(): IStoredDocument[] {
     const data = fs.readFileSync(this.filePath, 'utf-8');
     return JSON.parse(data);
   }
 
-  saveDocument(document: StoredDocument): void {
+  saveDocument(document: IStoredDocument): void {
     const documents = this.getDocuments();
     documents.push(document);
     fs.writeFileSync(this.filePath, JSON.stringify(documents, null, 2));
@@ -29,11 +29,11 @@ export class LocalFileStore {
     fs.writeFileSync(this.filePath, JSON.stringify(documents, null, 2));
   }
 
-  getDocumentsByClient(clientId: string): StoredDocument[] {
+  getDocumentsByClient(clientId: string): IStoredDocument[] {
     return this.getDocuments().filter(doc => doc.clientId === clientId);
   }
 
-  listClientsWithDocuments(): { clientId: string, documents: StoredDocument[] }[] {
+  listClientsWithDocuments(): { clientId: string, documents: IStoredDocument[] }[] {
     const documents = this.getDocuments();
     const clients = Array.from(new Set(documents.map(doc => doc.clientId)));
 
