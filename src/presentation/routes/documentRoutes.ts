@@ -1,5 +1,3 @@
-// src/routes/documentRoutes.ts
-
 import { Router } from 'express';
 import { DocumentController } from '../controllers/documentController';
 import multer from 'multer';

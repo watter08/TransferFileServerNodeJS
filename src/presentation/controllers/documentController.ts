@@ -4,6 +4,7 @@ import { DropboxService } from '../../application/services/dropboxService';
 const dropboxService = new DropboxService();
 
 export class DocumentController {
+  
   static async uploadDocument(req: Request, res: Response): Promise<void> {
     const { clientId } = req.body;
     const file = req.file;
