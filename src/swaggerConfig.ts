@@ -8,7 +8,7 @@ const swaggerOptions = {
       },
       servers: [
         {
-          url: 'http://localhost:4125',
+          url: `http://localhost:${process.env.PORT || 4125}`,
           description: 'Development server',
         },
       ],
@@ -17,4 +17,3 @@ const swaggerOptions = {
   };
   
   export default swaggerOptions;
-  
